@@ -38,11 +38,18 @@ html, body { width:100%; height:100%; overflow:hidden; position:relative; font-f
   bottom:1rem; right:1rem; display:flex; align-items:center; gap:0.5rem;
 }
 #colorBtn {
-  padding:0.5rem 1rem; border:none; border-radius:0.5rem;
-  background:rgba(255,255,255,0.2); color:#fff; cursor:pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
   transition: background 0.3s;
 }
-#colorBtn:hover { background:rgba(255,255,255,0.4); }
+
+#colorBtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
 
 .info-wrapper {
   position: relative;
@@ -135,4 +142,32 @@ html, body { width:100%; height:100%; overflow:hidden; position:relative; font-f
 .url-button a:hover {
   color: #4471ee; /* 滑鼠移過去時的顏色（例如金色） */
   text-decoration: underline; /* 滑過去加底線，想要可以加 */
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #7b899b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.github-button:hover {
+  background-color: #6e7dff;
+}
+
+.github-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px; /* 控制按鈕之間的間距 */
+  align-items: center; /* 垂直置中按鈕 */
 }
