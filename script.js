@@ -1,5 +1,5 @@
-// 倒數計時邏輯（114 會考：2025-05-20 09:00）
-const examDate = new Date('2025-05-17T08:10:00');
+// 倒數計時邏輯（114 會考：2025-05-17 08:00）
+const examDate = new Date('2025-05-17T08:00:00');
 
 function updateCountdown() {
   const diff = examDate - new Date();
