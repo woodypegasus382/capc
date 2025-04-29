@@ -27,3 +27,29 @@ document.getElementById('colorBtn').addEventListener('click', () => {
   const grad = `linear-gradient(135deg, hsl(${hue},70%,60%), hsl(${(hue+60)%360},70%,60%))`;
   stripes.forEach(s => s.style.background = grad);
 });
+
+function getCurrentDateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }
+
+  // 更新顯示當前時間的元素
+  function updateCurrentDateTime() {
+    const nowDatetimeElement = document.getElementById('now-datetime');
+    if (nowDatetimeElement) {
+      nowDatetimeElement.textContent = getCurrentDateTime();
+    }
+  }
+
+  // 初始設定
+  updateCurrentDateTime();
+
+  // 每秒更新一次時間
+  setInterval(updateCurrentDateTime, 1000);
