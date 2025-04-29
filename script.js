@@ -28,24 +28,26 @@ document.getElementById('colorBtn').addEventListener('click', () => {
   stripes.forEach(s => s.style.background = grad);
 });
 
-function getCurrentDateTime() {
+function updateTime() {
     const now = new Date();
+            
+    // 取得年份、月份、日期、時、分、秒
     const year = now.getFullYear();
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const day = now.getDate().toString().padStart(2, '0');
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-  }
-// 更新顯示當前時間的元素
-function updateCurrentDateTime() {
-    const nowDatetimeElement = document.getElementById('now-datetime');
-    if (nowDatetimeElement) {
-      nowDatetimeElement.textContent = getCurrentDateTime();
-    }
-  }
-// 初始設定
-updateCurrentDateTime();
-// 每秒更新一次時間
-setInterval(updateCurrentDateTime, 1000);
+    const month = String(now.getMonth() + 1).padStart(2, '0');  // 月份從0開始，所以要加1，並確保是兩位數
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+     // 格式化時間
+     const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            
+     // 更新顯示
+     document.getElementById('datetime').textContent = `現在時間: ${formattedTime}`;
+}
+
+// 更新時間每秒
+setInterval(updateTime, 1000);
+        
+// 初始顯示一次
+updateTime();
