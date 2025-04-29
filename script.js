@@ -36,20 +36,16 @@ function getCurrentDateTime() {
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
-
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   }
-
-  // 更新顯示當前時間的元素
-  function updateCurrentDateTime() {
+// 更新顯示當前時間的元素
+function updateCurrentDateTime() {
     const nowDatetimeElement = document.getElementById('now-datetime');
     if (nowDatetimeElement) {
       nowDatetimeElement.textContent = getCurrentDateTime();
     }
   }
-
-  // 初始設定
-  updateCurrentDateTime();
-
-  // 每秒更新一次時間
-  setInterval(updateCurrentDateTime, 1000);
+// 初始設定
+updateCurrentDateTime();
+// 每秒更新一次時間
+setInterval(updateCurrentDateTime, 1000);
