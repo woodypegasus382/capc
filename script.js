@@ -4,7 +4,7 @@ const examDate = new Date('2025-05-17T08:00:00');
 function updateCountdown() {
   const diff = examDate - new Date();
   if (diff <= 0) {
-    document.getElementById('countdown').innerHTML = '<div>考試已開始！</div>';
+    document.getElementById('countdown').innerHTML = '<div>考試已開始！你怎麼還在看呢!</div>';
     clearInterval(interval);
     return;
   }
