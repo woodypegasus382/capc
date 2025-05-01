@@ -9,11 +9,13 @@ function updateCountdown() {
                 clearInterval(countdownInterval);
                 return;
             }
+            const td = Math.floor(diff / (1000*60*60*24)+1);
             const d = Math.floor(diff / (1000*60*60*24)); // 計算天數
             const h = Math.floor((diff / (1000*60*60)) % 24); // 計算小時
             const m = Math.floor((diff / (1000*60)) % 60); // 計算分鐘
             const s = Math.floor((diff / 1000) % 60); // 計算秒數
 
+            document.getElementById('today').textContent = String(td).padStart(2, '0');
             document.getElementById('days').textContent = String(d).padStart(2, '0');
             document.getElementById('hours').textContent = String(h).padStart(2, '0');
             document.getElementById('minutes').textContent = String(m).padStart(2, '0');
