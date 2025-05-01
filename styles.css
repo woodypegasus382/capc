@@ -171,3 +171,17 @@ html, body { width:100%; height:100%; overflow:hidden; position:relative; font-f
   gap: 10px; /* 控制按鈕之間的間距 */
   align-items: center; /* 垂直置中按鈕 */
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* 減少寬度 */
+    font-size: calc(14px + 2vw); /* 更大的字體增長比例 */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    font-size: calc(12px + 2.5vw); /* 進一步調整字體大小 */
+  }
+}
