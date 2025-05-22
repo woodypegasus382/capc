@@ -1,5 +1,5 @@
 // 設定目標日期（2025-05-17 08:10:00）
-const examDate = new Date('2025-05-17T08:10:00');
+const examDate = new Date('2026-05-16T08:10:00');
 
 // 倒數計時邏輯
 function updateCountdown() {
